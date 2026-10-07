@@ -9,10 +9,10 @@ Die Chrome-Extension „HTML Feedback“ erzeugt **eine** JSON-Datei pro Feedbac
 
 ## Wichtig: Datei nie roh einlesen
 
-Die JSON-Datei **nicht** mit Read oder `cat` öffnen. Base64-Bilder kosten sehr viel Kontext und sind als Text nutzlos. Immer zuerst das Skript laufen lassen:
+Die JSON-Datei **nicht** mit Read oder `cat` öffnen. Base64-Bilder kosten sehr viel Kontext und sind als Text nutzlos. Immer zuerst das Skript laufen lassen, das neben dieser SKILL.md liegt. Das Skill-Verzeichnis wird beim Laden des Skills angezeigt, meist `~/.claude/skills/html-feedback`:
 
 ```bash
-python3 ~/.claude/skills/html-feedback/extract_feedback.py "/pfad/zu/feedback-….json" --out "<scratchpad>/html-feedback"
+python3 "<Skill-Verzeichnis>/extract_feedback.py" "/pfad/zu/feedback-….json" --out "<scratchpad>/html-feedback"
 ```
 
 - `--out`: Wenn es ein Scratchpad-Verzeichnis gibt, dorthin schreiben. Sonst weglassen, dann wird ins System-Temp-Verzeichnis geschrieben.
