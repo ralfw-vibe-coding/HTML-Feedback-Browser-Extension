@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beispiel-Dashboard</title>
+<style>
+  body { margin: 0; font: 15px/1.5 system-ui, sans-serif; background: #f6f7f9; color: #222; }
+  header.top { background: #1e293b; color: #fff; padding: 16px 32px; display: flex; align-items: center; gap: 24px; }
+  header.top h1 { margin: 0; font-size: 20px; }
+  header.top nav a { color: #cbd5e1; margin-right: 16px; text-decoration: none; }
+  main { padding: 24px 32px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: #fff; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h2 { font-size: 22px; margin: 0 0 6px; }
+  .card h2 mark { background: #fde047; color: inherit; padding: 0 4px; border-radius: 3px; }
+  .card .value { font-size: 32px; font-weight: 700; color: #0f766e; }
+  .card .value .unit { font-size: .6em; font-weight: 600; margin-left: 2px; }
+  .toolbar { display: flex; gap: 8px; margin: 28px 0 10px; }
+  .toolbar input { padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; }
+  .toolbar button { padding: 6px 12px; border: 0; border-radius: 6px; background: #db2777; color: #fff; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid #eee; }
+  #orders th:not(:last-child), #orders td:not(:last-child) { width: 1%; white-space: nowrap; padding-right: 40px; }
+  #orders th:nth-child(4), #orders td:nth-child(4) { text-align: right; font-variant-numeric: tabular-nums; }
+  th { background: #f1f5f9; font-size: 13px; text-transform: uppercase; color: #475569; }
+  footer { padding: 40px 32px; color: #64748b; font-size: 13px; }
+</style>
+</head>
+<body>
+  <header class="top">
+    <h1>Shop-Dashboard</h1>
+    <nav><a href="#">Übersicht</a><a href="#">Bestellungen</a><a href="#">Kunden</a></nav>
+  </header>
+  <main>
+    <section class="stats">
+      <div class="card"><h2><mark>Umsatz Q3</mark></h2><div class="value">48.210<span class="unit">€</span></div><p>+12 % ggü. Vorquartal</p></div>
+      <div class="card"><h2>Bestellungen</h2><div class="value">1.284</div><p>davon 87 offen</p></div>
+      <div class="card"><h2>Neue Kunden</h2><div class="value">312</div><p>Ziel: 400</p></div>
+    </section>
+
+    <div class="toolbar">
+      <input type="search" placeholder="Bestellungen filtern …">
+      <button class="export" onclick="alert('Export!')">Exportieren</button>
+    </div>
+    <table id="orders">
+      <thead><tr><th>Nr.</th><th>Kunde</th><th>Datum</th><th>Betrag</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>10231</td><td>Müller GmbH</td><td>02. Okt. 2026</td><td>1.240,00 €</td><td>bezahlt</td></tr>
+        <tr><td>10232</td><td>Schmidt &amp; Co.</td><td>03. Okt. 2026</td><td>380,50 €</td><td>offen</td></tr>
+        <tr><td>10233</td><td>Weber KG</td><td>04. Okt. 2026</td><td>2.015,90 €</td><td>bezahlt</td></tr>
+        <tr><td>10234</td><td>Fischer AG</td><td>05. Okt. 2026</td><td>99,00 €</td><td>storniert</td></tr>
+        <tr><td>10235</td><td>Becker e. K.</td><td>06. Okt. 2026</td><td>745,20 €</td><td>offen</td></tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>© 2026 Beispiel-Shop · Impressum · Datenschutz</footer>
+</body>
+</html>

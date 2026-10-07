@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>HTML Feedback – Hinweis</title>
+<style>
+  body { font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; color: #1f2937; background: #fafafa;
+    max-width: 640px; margin: 48px auto; padding: 0 20px; }
+  h1 { font-size: 22px; }
+  section { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 4px 22px 18px; }
+  code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; }
+  button { font: inherit; background: #db2777; color: #fff; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+  .detail { color: #6b7280; font-size: 13px; }
+  [hidden] { display: none; }
+</style>
+</head>
+<body>
+  <h1>HTML Feedback</h1>
+
+  <section id="file" hidden>
+    <h2>Zugriff auf lokale Dateien erlauben</h2>
+    <p>Die Seite ist eine lokale Datei (<code>file://</code>). Chrome erlaubt Erweiterungen dort nur Zugriff, wenn du es einmalig freigibst:</p>
+    <ol>
+      <li>Erweiterungsdetails öffnen (Button unten).</li>
+      <li>„<strong>Zugriff auf Datei-URLs zulassen</strong>“ einschalten.</li>
+      <li>Die HTML-Seite neu laden und das Extension-Icon erneut klicken.</li>
+    </ol>
+    <p><button class="open-details">Erweiterungsdetails öffnen</button></p>
+  </section>
+
+  <section id="restricted" hidden>
+    <h2>Auf dieser Seite nicht möglich</h2>
+    <p>Chrome erlaubt Erweiterungen auf manchen Seiten keinen Zugriff, z. B. auf <code>chrome://</code>-Seiten, dem Chrome Web Store oder der neuen Tab-Seite.
+       Auf normalen Webseiten, <code>localhost</code> und lokalen Dateien funktioniert HTML Feedback.</p>
+    <p class="detail" id="detail"></p>
+  </section>
+
+  <script src="help.js"></script>
+</body>
+</html>
